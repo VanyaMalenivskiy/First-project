@@ -12,9 +12,9 @@ import { HelpComponent } from './help/help.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '', component: AboutComponent},
-  {path: '', component: NewsComponent},
-  {path: '', component: HelpComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'news', component: NewsComponent},
+  {path: 'help', component: HelpComponent},
 ];
 
 @NgModule({
