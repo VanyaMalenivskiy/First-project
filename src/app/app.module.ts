@@ -1,8 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import {Router, RouterModule, Routes} from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,12 +7,6 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { HelpComponent } from './help/help.component';
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'news', component: NewsComponent},
-  {path: 'help', component: HelpComponent},
-];
 
 @NgModule({
   declarations: [
@@ -28,7 +19,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
