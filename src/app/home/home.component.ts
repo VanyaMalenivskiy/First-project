@@ -7,22 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit{
 
-  options:string[];
+   items = [];
+   newTask;
+
+  addToList() {
+    if (this.newTask === '') {
+    }
+    else {
+      this.items.push(this.newTask);
+      this.newTask = '';
+    }
+  }
+
+    deleteTask(index) {
+    this.items.splice(index, 1);
+  }
 
   ngOnInit() {
-    this.options = [];
   }
-
-  addOpt(option) {
-    this.options.unshift(option);
-    return false;
-  }
-
-  deleteOption(index: number): void {
-    this.options.splice(index, 1);
-  }
-
-  constructor() {
-  }
-
 }

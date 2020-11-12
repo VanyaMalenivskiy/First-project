@@ -1,14 +1,47 @@
-<form (submit)="addOpt(option.value)" class="container">
-  <div class="form-group">
-    <input type=" text" id="option" placeholder="Название задачи"
-    class="form-control" #option>
-    <button type="submit" class="btn btn-outline-primary">+Добавить</button>
-  </div>
-  <div class="alert alert-success">
-    <div *ngFor="let item of options; let i = index" class="list">
-      {{item}}
-      <button class="btn btn-danger btn-sm" (click)="deleteOption(i)">X</button>
+<div class="container-fluid">
+  <div class="row bg-success justify-content-center
+            align-items-center" style="height:80px">
+    <div class="col-3"></div>
+    <div class="col-6 text-light h2">
+      To-do list
     </div>
   </div>
-</form>
 
+  <div class="row mt-1" style="height:80px;">
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+    <div class="col-12 col-md-6 bg-success d-flex
+                    justify-content-center align-items-center
+                    text-light h3">
+
+      <input [(ngModel)]="newTask" type="text"
+             value="" placeholder="Название Задачи" class="col-7 form-control"
+             style="width:300px;">
+
+      <div class="col-1"></div>
+
+      <button (click)="addToList()"
+              class="btn btn-light text-success">+Добавить
+      </button>
+    </div>
+
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+
+  <div *ngFor="let i of items; let index = index;"
+       class="row mt-1" style="height:100px;">
+
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+
+    <div class="col-12 col-md-6 bg-success d-flex
+                    justify-content-center align-items-center
+                    text-light h3">
+
+      <div class="col-9 text-light h3">{{i}}</div>
+
+      <input (click)="deleteTask(index)" type="button"
+             value="X" class="col-2 btn btn-danger">
+    </div>
+
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+</div>
