@@ -20,8 +20,6 @@ export class RegistrationComponent implements OnInit {
     alert(this.user);
     console.log(this.user);
   }
-
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 }

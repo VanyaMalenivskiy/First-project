@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit{
     this.items.splice(index, 1);
   }
 
+
   ngOnInit() {
   }
 }
