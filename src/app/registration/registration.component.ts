@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export class User {
-  name: string;
-  email: string;
-  phone: string;
-}
-
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -14,12 +8,18 @@ export class User {
 })
 
 export class RegistrationComponent implements OnInit {
-
-  user: User = new User();
-  addUser(){
-    alert(this.user);
-    console.log(this.user);
-  }
+  myForm: FormGroup = new FormGroup({
+    userName: new FormControl('', Validators.required),
+    userEmail: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    userPhone: new FormControl('', Validators.pattern('[0-9]{10}'))
+  });
   ngOnInit(): void {
+  }
+  addUser() {
+    alert(this.myForm);
+    console.log(this.myForm);
   }
 }
