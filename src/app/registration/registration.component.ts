@@ -8,7 +8,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 
 export class RegistrationComponent implements OnInit {
-  myForm: FormGroup = new FormGroup({
+  myForm = new FormGroup ({
     userName: new FormControl('', Validators.required),
     userEmail: new FormControl('', [
       Validators.required,
@@ -16,10 +16,13 @@ export class RegistrationComponent implements OnInit {
     ]),
     userPhone: new FormControl('', Validators.pattern('[0-9]{10}'))
   });
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.log(this.myForm.value);
+    alert(this.myForm.value);
+  }
+
   ngOnInit(): void {
   }
-  addUser() {
-    alert(this.myForm);
-    console.log(this.myForm);
-  }
 }
+

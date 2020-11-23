@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="myForm">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Имя</label>
       <input class="form-control" name="name" formControlName="userName"/>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="form-group">
-      <button class="btn btn-default" [disabled]="myForm.invalid" (click)="addUser()">
+      <button type="submit" class="btn btn-default" [disabled]="myForm.invalid">
         Отправить
       </button>
     </div>
